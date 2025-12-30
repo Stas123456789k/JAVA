@@ -8,7 +8,7 @@ import java.util.List;
 public class App//kmklh
 {
     public static void main(String[] args)
-    {
+    {//lmkdjvnskdvnlsjuv,duj,
         List<Employee> employees = new ArrayList<>();
         employees.add(new Employee(1, "Иванов",   50000, false)); // фиксированная
         employees.add(new Employee(2, "Петров",     350, true));  // почасовая

@@ -11,15 +11,18 @@ public class App
 
         Course math = new Math("Математика");
         Course history = new History("История");
-        //,lcs;lv;msdsc lxc; kfoldm;n klxnlkdhn 
+
         courses.put(math.getName(), math);
         courses.put(history.getName(), history);
+
 
         for (String courseName : courses.keySet())
         {
             System.out.println(courseName);
         }
 
-        System.out.println(courses);
+
+    System.out.println(courses.values());
+
     }
 }

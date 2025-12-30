@@ -8,10 +8,6 @@ public class ShtatnySotrudnik extends Sotrudnik {
     public ShtatnySotrudnik(String fio, String position, double oklad, double premiya)
             throws OkladException, PremiyaException {
         super(fio, position, oklad);
-
-        if (premiya < 0)
-            throw new PremiyaException("Отрицательное значение премии.");
-
         this.premiya = premiya;
     }
 
