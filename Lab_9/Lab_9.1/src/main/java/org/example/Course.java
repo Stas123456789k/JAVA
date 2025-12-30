@@ -13,4 +13,12 @@ public class Course
     {
         return name;
     }
+//klukykkyuftcfgcfgn
+    @Override
+    public String toString() {
+        return "Course{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+    //mcklsdnvjkdvhbvjdbvdjhmb jhds
 }

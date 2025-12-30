@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Locale;
@@ -13,9 +14,8 @@ public class App2
         File file = new File("temp.txt");
         Scanner in = new Scanner(System.in);
 
-        try
+        try (FileInputStream ex = new FileInputStream(file);FileWriter writer = new FileWriter(file))
         {
-            FileWriter writer = new FileWriter(file);
             System.out.println("Введите 15 значений температуры (через пробел или с новой строки):");
 
             for (int i = 0; i < 5; i++)
@@ -23,14 +23,16 @@ public class App2
                 double t = in.nextDouble();
                 writer.write(t + "\n");
             }
-
-            writer.close();
+//
+ //            writer.close();
         }
         catch (IOException e)
         {
             System.out.println("Ошибка записи");
             return;
         }
+
+
 
         double sum = 0;
         int count = 0;

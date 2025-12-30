@@ -2,10 +2,13 @@ package org.example;
 import company.*;
 import Exceptions.*;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class App
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
         try
         {
             ShtatnySotrudnik s1 = new ShtatnySotrudnik("Иванов Иван Иванович", "Менеджер", 1200, 300);
@@ -22,41 +25,63 @@ public class App
             Otdel otdel = new Otdel("Разработка", 5);
             System.out.println("Отдел: " + otdel.getName() + ", сотрудников: " + otdel.getEmployeeCount() + "\n");
 
-        } catch (OkladException | PremiyaException e) {
+        }
+        catch (OkladException | PremiyaException e)
+        {
             System.out.println("Ошибка при создании сотрудника: " + e.getMessage());
-        } catch (IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e)
+        {
             System.out.println("Ошибка ввода данных: " + e.getMessage());
         }
 
 
 
-        try {
+        try
+        {
             Sotrudnik bad1 = new Sotrudnik("Сидоров Сидор Сидорович", "Инженер", -1000);
-        } catch (OkladException e) {
+            bad1.getFio();
+        }
+        catch (OkladException e)
+        {
             System.out.println("Ошибка (оклад): " + e.getMessage());
+
         }
 
-        try {
+        try
+        {
             ShtatnySotrudnik bad2 = new ShtatnySotrudnik("Анна Смирнова", "Бухгалтер", 1500, -200);
-        } catch (PremiyaException | OkladException e) {
+
+        }
+        catch (PremiyaException | OkladException e)
+        {
             System.out.println("Ошибка (премия): " + e.getMessage());
         }
 
-        try {
+        try
+        {
             Otdel bad3 = new Otdel("", 10);
-        } catch (IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e)
+        {
             System.out.println("Ошибка (отдел): " + e.getMessage());
         }
 
-        try {
+        try
+        {
             Firma bad4 = new Firma("   ");
-        } catch (IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e)
+        {
             System.out.println("Ошибка (фирма): " + e.getMessage());
         }
 
-        try {
+        try
+        {
             Otdel bad5 = new Otdel("Отдел кадров", -5);
-        } catch (IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e)
+        {
             System.out.println("Ошибка (количество сотрудников): " + e.getMessage());
         }
 
