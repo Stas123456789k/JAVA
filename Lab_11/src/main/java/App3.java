@@ -18,9 +18,9 @@ public class App3 {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
         // ---------- 1. СОЗДАЁМ И ЗАПОЛНЯЕМ ФАЙЛ ----------
-        try {
+        try {//lkvlduvtkrvnbuvdbv,k
             FileWriter writer = new FileWriter(inputFile);
-
+            //kcsdlivudklsdhvruielhj
             // тут можешь вписать любые свои даты
             writer.write("01.02.2024\n");
             writer.write("31.12.2023\n");
